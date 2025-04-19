@@ -10,9 +10,17 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-P5H1QVJ9LZ');
+
+    // ▼ クエリパラメータを取得して、条件に応じてイベント送信
+    const fromParam = new URLSearchParams(window.location.search).get('from');
+    if (fromParam === 'airwork') {
+      gtag('event', 'from_airwork');
+    } else if (fromParam === 'engage') {
+      gtag('event', 'from_engage');
+    }
   </script>
 </head>
 <body>
-  <h1>こんにちは！これはトラッキングテスト用のサイトです。</h1>
+  <h1>こんにちは！これはトラッキングテスト用のサイトです。分ける</h1>
 </body>
 </html>
